@@ -4,13 +4,15 @@
   "private": true,
   "dependencies": {
     "gravatar-url": "^2.0.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
     "semantic-ui-css": "^2.3.2",
-    "semantic-ui-react": "^0.81.1"
+    "semantic-ui-react": "^0.81.1",
+    "validator": "^10.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

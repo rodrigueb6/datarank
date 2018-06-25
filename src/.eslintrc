@@ -5,8 +5,10 @@
     "node": true,
     "mocha": true
   },
-  "extends": ["plugin:prettier/recommended", "react-app"],
-  "parser": "babel-eslint",
+  "extends": [
+    "plugin:prettier/recommended",
+    "react-app"
+  ],
   "rules": {
     "prettier/prettier": [
       "error",

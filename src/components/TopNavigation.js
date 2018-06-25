@@ -1,33 +1,40 @@
+/*
 import React from 'react';
 import { Menu, Dropdown, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import gravatarUrl from 'gravatar-url';
-import { logout } from '../../actions/auth'
+import { logout } from '../../actions/auth';
 
 export const TopNavigation = ({ user, logout }) => (
-    <Menu secondary pointing>
-    <Menu.Item as={Link} to="/index">Home</Menu.Item>
+  <Menu secondary pointing>
+    <Menu.Item as={Link} to="/index">
+      Home
+    </Menu.Item>
     <Menu.Menu position="right">
-        <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} />}>
+      <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} />}>
         <Dropdown.Menu>
-            <Dropdown.Item onClick={() => logout}>Logout</Dropdown.Item>
+          <Dropdown.Item onClick={() => logout}>Logout</Dropdown.Item>
         </Dropdown.Menu>
-        </Dropdown>
-        </Menu.Menu>
-    </Menu>
+      </Dropdown>
+    </Menu.Menu>
+  </Menu>
 );
 
 TopNavigation.propTypes = {
-    user: PropTypes.shape({
-        email: PropTypes.string.isRequired
-    }).isRequired,
-    logout: PropTypes.func.isRequired
+  user: PropTypes.shape({
+    email: PropTypes.string.isRequired
+  }).isRequired,
+  logout: PropTypes.func.isRequired
 };
 
-function mapStateToProps(state){
-    return {
-        user: state.user
-    }
+function mapStateToProps(state) {
+  return {
+    user: state.user
+  };
 }
 
-export default connect(mapStateToProps, { logout })(TopNavigation);
+export default connect(
+  mapStateToProps,
+  { logout }
+)(TopNavigation);
+*/

@@ -6,6 +6,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import decode from 'jwt-decode';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import rootReducer from './rootReducer';
@@ -14,7 +15,8 @@ import { userLoggedIn } from './actions/auth';
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 if (localStorage.datarankJWT) {
-  const user = { token: localStorage.datarankJWT };
+  const payload = decode(localStorage.datarankJWT);
+  const user = { token: localStorage.datarankJWT, email: payload.email, confirmed: payload.confirmed };
   store.dispatch(userLoggedIn(user));
 }
 

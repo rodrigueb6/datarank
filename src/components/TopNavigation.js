@@ -1,9 +1,10 @@
-/*
 import React from 'react';
+import { connect } from 'react-redux';
 import { Menu, Dropdown, Image } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import gravatarUrl from 'gravatar-url';
-import { logout } from '../../actions/auth';
+import * as actions from '../actions/auth';
+import PropTypes from 'prop-types';
 
 export const TopNavigation = ({ user, logout }) => (
   <Menu secondary pointing>
@@ -13,7 +14,7 @@ export const TopNavigation = ({ user, logout }) => (
     <Menu.Menu position="right">
       <Dropdown trigger={<Image avatar src={gravatarUrl(user.email)} />}>
         <Dropdown.Menu>
-          <Dropdown.Item onClick={() => logout}>Logout</Dropdown.Item>
+          <Dropdown.Item onClick={() => logout()}>Logout</Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
     </Menu.Menu>
@@ -35,6 +36,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { logout }
+  { logout: actions.logout }
 )(TopNavigation);
-*/
